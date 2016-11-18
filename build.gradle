@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+mainClassName = 'de.jenssproede.main.Game'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.lwjgl.lwjgl:lwjgl:2.8.2'
+    compile group: 'org.slick2d', name: 'slick2d-core', version: '1.0.1'
+    compile group: 'org.lwjgl.lwjgl', name: 'lwjgl_util', version: '2.9.1'
+}
+
+run {
+    jvmArgs += '-Djava.library.path=natives/macosx'
+}
